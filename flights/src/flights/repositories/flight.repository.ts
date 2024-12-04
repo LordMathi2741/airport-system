@@ -58,7 +58,6 @@ export class FlightRepository implements IFlightRepository {
 
   async update(id: string, flightRequest: FlightRequestDTO): Promise<FlightResponseDTO> {
     const objectId = new Types.ObjectId(id);
-    
     const flightUpdated = await this.flightModel.findByIdAndUpdate(
       objectId, 
       flightRequest,
@@ -68,7 +67,6 @@ export class FlightRepository implements IFlightRepository {
     if (!flightUpdated) {
       throw new NotFoundException(`Flight with id ${id} not found`);
     }
-
     return new FlightResponseDTO(
       flightUpdated._id.toString(),
       flightUpdated.origin,
