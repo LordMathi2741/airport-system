@@ -5,7 +5,7 @@ import { MessagePattern, Payload } from "@nestjs/microservices";
 import { FlightMSG } from "src/common/constants";
 import { FlightResponseDTO } from "../dto/flight-response.dto";
 
-@Controller("/api/v1/flights")
+@Controller("api/v1/flights")
 export class FlightController{
     constructor(@Inject(IFlightServiceToken) private readonly flightService: IFlightService){}
 

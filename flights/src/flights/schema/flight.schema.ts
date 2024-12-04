@@ -5,7 +5,7 @@ export type FlightDocument = HydratedDocument<Flight>;
 @Schema()
 export class Flight {
     @Prop()
-    orgin: string;
+    origin: string;
     @Prop()
     destination: string;
     @Prop()
