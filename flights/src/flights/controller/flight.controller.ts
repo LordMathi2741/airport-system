@@ -26,7 +26,6 @@ export class FlightController{
 
     @MessagePattern(FlightMSG.UPDATE_FLIGHT)
     async update(@Payload() flight: any): Promise<FlightResponseDTO> {
-        console.log('Received flight payload:', flight);
         return await this.flightService.update(flight.id, flight);
     }
 
